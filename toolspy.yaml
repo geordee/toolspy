@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: toolspy
+  labels:
+    app: toolspy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: toolspy
+  template:
+    metadata:
+      labels:
+        app: toolspy
+    spec:
+      containers:
+      - name: toolspy
+        image: geordee/toolspy:latest
